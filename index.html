@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FavioTech</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header id="inicio">
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <nav id="nav">
+        <ul id="list_nav">
+            <li class="list_li" id="id_inicio"><a class="list_a" href="#inicio">Inicio</a></li>
+            <li class="list_li"><a class="list_a" href="#servicios">Servicios</a></li>
+            <li class="list_li"><a class="list_a" href="#proyectos">Proyectos</a></li>
+            <li class="list_li" id="id_contacto"><a class="list_a" href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <img src="img/logo.png" alt="Logo FavioTech" id="logo_nav">
+    <h1>FavioTech</h1>
+    <p>Soluciones rápidas en tecnología, con calidad y confianza</p>
+  </header>
+
+  <section id="promociones">
+    <h2>Promociones Especiales</h2>
+    <h3 id="text_promociones">(Has click en tu promoción)</h3>
+    <div class="promo-cards">
+      <a href="https://wa.me/59169010578?text=Hola%20FavioTech,%20estoy%20interesado%20en%20la%20promoción%20de%20Formateo%20e%20Instalación." class="promo-card" target="_blank">
+        <h3>Formateo + Instalación</h3>
+        <p class="precio">Bs 30</p>
+        <p>Formateo completo y sistema operativo listo para usar.</p>
+      </a>
+      
+      <a href="https://wa.me/59169010578?text=Hola%20FavioTech,%20quiero%20más%20información%20sobre%20la%20Optimización%20y%20Limpieza." class="promo-card" target="_blank">
+        <h3>Mantenimiento + Limpieza</h3>
+        <p class="precio">Bs 30</p>
+        <p>Acelera, limpia tu PC y mejora el rendimiento.</p>
+      </a>
+      
+      <a href="https://wa.me/59169010578?text=Hola%20FavioTech,%20me%20interesa%20la%20creación%20de%20una%20página%20web." class="promo-card" target="_blank">
+        <h3>Creación de Página Web</h3>
+        <p class="precio">Desde Bs 100</p>
+        <p>Diseño moderno y adaptado a tus necesidades.</p>
+      </a>
+    </div>
+  </section>
+  
+
+
+  <section class="section services" id="servicios">
+    <h2>Servicios</h2>
+    <ul class="service-list">
+      <li class="service-item">
+        <div class="service-header">
+          <span>Formateo e instalación de Windows</span>
+          <button class="toggle-btn">
+            ¿Qué incluye?
+            <span class="arrow">▼</span>
+          </button>
+        </div>
+        <div class="service-content">
+          <ul>
+            <li>✔ Instalación limpia de Windows</li>
+            <li>✔ Configuración básica y activación</li>
+            <li>✔ Instalación de drivers esenciales</li>
+            <li>✔ Actualizaciones importantes</li>
+          </ul>
+        </div>
+      </li>
+  
+      <li class="service-item">
+        <div class="service-header">
+          <span>Limpieza y aceleración de PCs lentas</span>
+          <button class="toggle-btn">
+            ¿Qué incluye?
+            <span class="arrow">▼</span>
+          </button>
+        </div>
+        <div class="service-content">
+          <ul>
+            <li>✔ Limpieza de polvo interna al equipo (Computadoras de escritorio o laptos)</li>
+            <li>✔ Limpieza profunda de archivos basura</li>
+            <li>✔ Optimización del inicio del sistema</li>
+            <li>✔ Pasta térmica nueva al procesador para evitar sobrecalentamientos</li>
+          </ul>
+        </div>
+      </li>
+  
+      <li class="service-item">
+        <div class="service-header">
+          <span>Recuperación de archivos</span>
+          <button class="toggle-btn">
+            ¿Qué incluye?
+            <span class="arrow">▼</span>
+          </button>
+        </div>
+        <div class="service-content">
+          <ul>
+            <li>✔ Búsqueda de archivos borrados</li>
+            <li>✔ Recuperación de documentos y fotos</li>
+            <li>✔ Revisión de discos dañados</li>
+            <li>✔ Exportación segura de los archivos</li>
+          </ul>
+        </div>
+      </li>
+  
+      <li class="service-item">
+        <div class="service-header">
+          <span>Creación de páginas web</span>
+          <button class="toggle-btn">
+            ¿Qué incluye?
+            <span class="arrow">▼</span>
+          </button>
+        </div>
+        <div class="service-content">
+          <ul>
+            <li>✔ Diseño moderno y responsivo</li>
+            <li>✔ Adaptado a celulares y tablets</li>
+            <li>✔ Optimización SEO básica</li>
+            <li>✔ Publicación online y dominio opcional</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </section>
+  
+  
+
+  
+
+  <section class="section projects" id="proyectos">
+    <h2>Proyectos Realizados</h2>
+    <ul>
+      <li>Optimización y limpieza de equipos para una oficina de abogados</li>
+      <li>Diseño y desarrollo de página web para una pastelería local</li>
+      <li>Recuperación de datos importantes de un disco externo dañado</li>
+      <li>Instalación y configuración de sistema operativo Windows en laptops escolares</li>
+    </ul>
+  </section>
+
+  <section class="section contact" id="contacto">
+    <h2>Contáctame</h2>
+    <a href="https://wa.me/59169010578" target="_blank">WhatsApp: 69010578</a>
+    <a href="#">www.example.com</a>
+
+    <form action="#" method="post">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 FavioTech. Todos los derechos reservados.
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
