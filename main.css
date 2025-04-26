@@ -1,0 +1,417 @@
+html{
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  header {
+    background-color: #2183b5;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  header img {
+    max-width: 100px;
+    margin-bottom: 1rem;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+  .section {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: auto;
+  }
+
+/* servicios */
+.section h2 {
+  color: #2183b5;
+}
+
+.services ul {
+  padding: 0;
+}
+
+.service-item {
+  list-style: none;
+  margin-bottom: 20px;
+  border: 1px solid #2183b5;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2183b5;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  background-color: #2183b5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: #17658a;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.service-content {
+  display: none;
+  margin-top: 15px;
+  padding-left: 15px;
+  font-size: 1rem;
+  color: #333;
+  text-align: left;
+  animation: fadeIn 0.5s ease;
+}
+
+.service-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-content li {
+  margin: 10px 0;
+  padding-left: 1rem;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+/* fin  servicios */
+
+  .projects ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+  .projects li {
+    padding: 0.5rem 0;
+    font-size: 1.05rem;
+  }
+  .contact {
+    background-color: #e8f4fc;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .contact h2 {
+    margin-bottom: 1rem;
+    color: #2183b5;
+  }
+  .contact a {
+    display: block;
+    font-size: 1.2rem;
+    color: #2183b5;
+    text-decoration: none;
+    margin: 0.5rem 0;
+  }
+  form {
+    margin-top: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  form input, form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  form button {
+    background-color: #2183b5;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    font-size: 0.9rem;
+  }
+
+
+
+
+
+  #promociones {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+  }
+
+  #promociones h2 {
+      color: #2183b5;
+      margin-bottom: 25px;
+  }
+
+  #text_promociones{
+    color: #2183b5;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+
+  .promo-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+  }
+
+  .promo-card {
+      background-color: #2183b5;
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      display: block;
+  }
+
+  .promo-card:hover {
+      transform: scale(1.05);
+      background-color: #1a6a90;
+  }
+
+  .promo-card h3 {
+      margin-bottom: 10px;
+  }
+
+  .precio {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 10px 0;
+  }
+
+
+
+
+
+#logo_nav{
+    border-radius: 50%;
+    margin-top: 100px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1001;
+}
+
+
+#nav {
+    position: fixed;
+    top: 15px;                   
+    left: 50%;
+    transform: translateX(-50%);
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    background: #444343;
+    height: 7.5vh;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hide-nav {
+    opacity: 0;
+    transform: translate(-50%, -30px);  
+    pointer-events: none;    
+}
+
+
+#nav #list_nav {
+    list-style: none;
+    display: flex;            
+    margin: 0;
+    padding: 0;
+}
+
+
+#nav #list_nav .list_li {
+    padding: 0 20px;          
+    display: flex;
+    align-items: center;       
+    height: 100%;              
+}
+
+.list_li .list_a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.list_li .list_a:hover{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+
+
+/* Contacto arreglos */
+.contact {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+/* fin Contacto arreglos */
+
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  #nav {
+    display: none;
+  }
+
+  #nav.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    background-color: #222;
+    padding: 10px;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  #nav #list_nav {
+    flex-direction: column;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  #nav {
+    flex-direction: column;
+    top: 0;
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    border-radius: 0;
+  }
+
+  #nav #list_nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #nav #list_nav .list_li {
+    padding: 10px 0;
+    justify-content: center;
+  }
+
+  .promo-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promo-card {
+    width: 90%;
+  }
+
+  .service-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toggle-btn {
+    margin-top: 10px;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+
+  form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  #logo_nav {
+    margin-top: 50px;
+    max-width: 80px;
+  }
+}
