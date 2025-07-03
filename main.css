@@ -31,96 +31,8 @@ body {
     margin: auto;
   }
 
-/* servicios */
-.section h2 {
-  color: #2183b5;
-}
-
-.services ul {
-  padding: 0;
-}
-
-.service-item {
-  list-style: none;
-  margin-bottom: 20px;
-  border: 1px solid #2183b5;
-  border-radius: 10px;
-  padding: 15px;
-  background-color: #ffffff;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.service-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #2183b5;
-  cursor: pointer;
-}
-
-.toggle-btn {
-  background-color: #2183b5;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 5px 12px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: background-color 0.3s;
-}
-
-.toggle-btn:hover {
-  background-color: #17658a;
-}
-
-.arrow {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.arrow.rotate {
-  transform: rotate(180deg);
-}
-
-.service-content {
-  display: none;
-  margin-top: 15px;
-  padding-left: 15px;
-  font-size: 1rem;
-  color: #333;
-  text-align: left;
-  animation: fadeIn 0.5s ease;
-}
-
-.service-content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.service-content li {
-  margin: 10px 0;
-  padding-left: 1rem;
-  position: relative;
-  font-size: 1rem;
-  line-height: 1.5;
-}
 
 
-/* fin  servicios */
-
-  .projects ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-  }
-  .projects li {
-    padding: 0.5rem 0;
-    font-size: 1.05rem;
-  }
   .contact {
     background-color: #e8f4fc;
     padding: 2rem 1rem;
@@ -170,58 +82,496 @@ body {
 
 
 
-  #promociones {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: white;
+/*Servicios*/
+
+#text_servicios {
+  margin-bottom: 2rem;
+  color: #2183b5;
+  text-align: center;
+  font-size: 2.8rem;
+  padding-top: 60px;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+#text_servicios::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #2183b5, #1a6a90);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.promo-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px; /* Reducido para mejor visualización */
+  padding: 20px;
+  max-width: 1200px; /* Limita el ancho máximo */
+  margin: 0 auto 100px; /* Centrado y margen inferior */
+}
+
+/* Contenedor de cada tarjeta (estructura 3D) */
+.promo-card {
+  background: transparent;
+  width: 260px;
+  height: 220px;
+  perspective: 1000px;
+  flex: 0 0 calc(33.333% - 100px); /* 3 tarjetas por fila con gap incluido */
+  margin-bottom: 30px;
+  transform: translate(-8%, 0);
+  cursor: pointer;
+
+}
+
+/* Parte interna que se voltea */
+.promo-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 15px;
+}
+
+/* Al pasar el mouse */
+.promo-card:hover .promo-card-inner {
+  transform: rotateY(180deg) translate(-15%, 0);
+}
+
+/* Frente y reverso de la tarjeta */
+.promo-card-front,
+.promo-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: all 0.5s ease;
+}
+/* Colores */
+.promo-card-front {
+  background: linear-gradient(135deg, #2183b5, #1a6a90);
+  transform-style: preserve-3d;
+}
+
+.promo-card-front::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="0.5" opacity="0.2"><circle cx="50" cy="50" r="40"/></svg>');
+  background-size: 60px 60px;
+  border-radius: 20px;
+  opacity: 0.3;
+}
+
+
+.promo-card-front h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+
+.promo-card-back {
+  background: linear-gradient(135deg, #1a6a90, #134d6b);
+  transform: rotateY(180deg);
+  text-align: center;
+  overflow: hidden;
+}
+
+
+.promo-card-back::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+
+/* Enlace en la parte de atrás */
+.promo-card-back p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.promo-card-back a {
+  margin-top: 15px;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,0.2);
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.promo-card-back a:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.promo-card:hover .promo-card-front {
+  box-shadow: 0 5px 15px rgba(33, 131, 181, 0.4);
+}
+
+.promo-card:hover .promo-card-back {
+  box-shadow: 0 5px 15px rgba(26, 106, 144, 0.4);
+}
+
+
+/* Precio */
+.precio {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive */
+
+
+@media (max-width: 768px) {
+  #text_servicios {
+    font-size: 2.2rem;
+    padding-top: 40px;
   }
-
-  #promociones h2 {
-      color: #2183b5;
-      margin-bottom: 25px;
-  }
-
-  #text_promociones{
-    color: #2183b5;
-    font-size: 15px;
-    margin-bottom: 15px;
-  }
-
-
+  
   .promo-cards {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
+    gap: 1px; /* Reducido para móviles */
+    margin-bottom: 0px;
   }
-
+  
   .promo-card {
-      background-color: #2183b5;
-      color: white;
-      padding: 20px;
-      border-radius: 15px;
-      width: 250px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-      transition: transform 0.3s, background-color 0.3s;
-      cursor: pointer;
-      display: block;
+    width: calc(50% - 15px); /* 2 tarjetas por fila con gap incluido */
+    height: 250px; /* Altura aumentada */
+    flex: 0 0 auto; /* Elimina la restricción flex conflictiva */
+    max-width: none; /* Elimina la limitación máxima */
+    margin-bottom: 20px;
+    transform: translateX(-2.5%); /* Elimina el translate que puede causar problemas */
   }
 
-  .promo-card:hover {
-      transform: scale(1.05);
-      background-color: #1a6a90;
+  .promo-card:hover{
+    transform: translateX(-12.6%);
   }
-
-  .promo-card h3 {
-      margin-bottom: 10px;
+  
+  .promo-card-inner {
+    height: 70%; /* Asegura que ocupe toda la altura */
   }
-
+  
+  .promo-card-front,
+  .promo-card-back {
+    padding: 20px 15px; /* Padding ajustado para móviles */
+  }
+  
+  .promo-card-front h3 {
+    font-size: 1.3rem; /* Tamaño de fuente ajustado */
+    margin-bottom: 10px;
+  }
+  
   .precio {
-      font-size: 24px;
-      font-weight: bold;
-      margin: 10px 0;
+    font-size: 1.4rem;
+    margin: 8px 0;
   }
+  .promo-card-back a {
+    padding: 8px 20px; /* Botón más compacto */
+    font-size: 0.9rem;
+  }
+}
+
+/* Para móviles muy pequeños (opcional) */
+@media (max-width: 480px) {
+  .promo-card {
+    width: calc(50% - 15px); /* 2 tarjetas por fila con gap incluido */
+    height: 250px; /* Altura aumentada */
+    flex: 0 0 auto; /* Elimina la restricción flex conflictiva */
+    max-width: none; /* Elimina la limitación máxima */
+    margin-bottom:0px;
+    transform: translateX(-4.5%); /* Elimina el translate que puede causar problemas */
+  }
+  
+  .promo-card:hover{
+    transform: translateX(-9.5%);
+  }
+
+  
+  .promo-cards {
+    gap: 15px;
+  }
+}
+
+/*Fin servicios*/
+
+
+
+
+
+
+
+
+
+/*Licencias*/
+
+.licencias-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 15px; /* Reduje el padding horizontal */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%; /* Asegura que no exceda el ancho de la pantalla */
+  box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
+}
+
+.section-title {
+  margin-bottom: 2rem;
+  color: #2183b5;
+  text-align: center;
+  font-size: 2.8rem;
+  padding-top: 60px;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #2183b5, #1a6a90);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1rem; /* Reduje el tamaño para móviles */
+  margin-bottom: 30px;
+  padding: 0 10px; /* Añadí padding para evitar que el texto toque los bordes */
+}
+
+.licencias-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Reduje el gap */
+  margin-bottom: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.licencia-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 30px); /* 3 columnas en desktop con gap incluido */
+  padding: 20px; /* Reduje el padding */
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box; /* Importante para el cálculo del ancho */
+}
+
+.licencia-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.licencia-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.licencia-logo {
+  width: 60px; /* Reduje el tamaño */
+  height: 60px;
+  object-fit: contain;
+  margin: 0 5px 10px; /* Ajusté los márgenes */
+}
+
+.licencia-card h3 {
+  color: #2b579a;
+  font-size: 1.2rem; /* Reduje el tamaño */
+  margin: 0;
+  line-height: 1.3;
+}
+
+.licencia-precio {
+  font-size: 1.5rem; /* Reduje el tamaño */
+  font-weight: bold;
+  color: #107c10;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.licencia-beneficios {
+  padding: 0;
+  margin: 0 0 20px 0;
+  list-style: none;
+}
+
+.licencia-beneficios li {
+  padding: 6px 0;
+  color: #333;
+  position: relative;
+  padding-left: 25px;
+  font-size: 0.9rem; /* Reduje el tamaño */
+  line-height: 1.4;
+}
+
+.licencia-beneficios li:before {
+  content: "✓";
+  color: #107c10;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.licencia-btn {
+  display: block;
+  background-color: #107c10;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  font-size: 0.9rem; /* Reduje el tamaño */
+}
+
+.licencia-btn:hover {
+  background-color: #0a5a0a;
+}
+
+/* FAQ Section */
+.faq-section {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: calc(100% - 30px); /* Asegura que no toque los bordes */
+}
+
+.faq-section h3 {
+  color: #2183b5;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 15px;
+}
+
+.faq-question {
+  font-weight: bold;
+  color: #2183b5;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.faq-answer {
+  color: #555;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .licencia-card {
+    width: calc(50% - 20px); /* 2 columnas en tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .licencias-section {
+    padding: 30px 10px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .licencia-card {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .licencia-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .licencias-section {
+    padding: 20px 10px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .licencia-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .licencia-precio {
+    font-size: 1.3rem;
+  }
+  
+  .licencia-btn {
+    padding: 8px;
+  }
+
+  .licencia-card {
+    border: 1px solid #2183b5;
+  }
+  
+}
+
+/*Fin licencias*/
+
+
+
 
 
 
@@ -414,4 +764,13 @@ form textarea {
     margin-top: 50px;
     max-width: 80px;
   }
+
+
+
+
+  .promo-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
 }
